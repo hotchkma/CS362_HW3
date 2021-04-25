@@ -3,16 +3,22 @@
 
 
 def main():
-	n=input("Please insert a year to check if it's a leap year: ")
-	n=int(n)
-	if n%4==0:
-		if n%100==0:
-				if n%400==0:
-						print(f"{n} is a leap year")
+	n="-1"
+	v=-1
+	while v<0:
+			n=input("Please insert a year to check if it's a leap year: ")
+			try:
+				v=int(n)
+			except ValueError:
+				print("That's not even a number!")
+	if v%4==0:
+		if v%100==0:
+				if v%400==0:
+						print(f"{v} is a leap year")
 				else:
-						print(f"{n} is not a leap year")
+						print(f"{v} is not a leap year")
 		else:
-			print(f"{n} is a leap year")
+			print(f"{v} is a leap year")
 	else:
-		print(f"{n} is not a leap year")
+		print(f"{v} is not a leap year")
 main()
